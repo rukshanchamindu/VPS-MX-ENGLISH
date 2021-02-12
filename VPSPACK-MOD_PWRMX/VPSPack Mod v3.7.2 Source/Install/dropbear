@@ -1,6 +1,0 @@
-KEYGEN=/usr/bin/dropbearkey
-DROPBEAR=/usr/sbin/dropbear
-RSA_KEY=/etc/dropbear/dropbear_rsa_host_key
-DSS_KEY=/etc/dropbear/dropbear_dss_host_key
-PID_FILE=/var/run/dropbear.pid
-OPTIONS="-p 443"

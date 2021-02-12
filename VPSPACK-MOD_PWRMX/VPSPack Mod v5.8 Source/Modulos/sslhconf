@@ -1,8 +1,0 @@
-RUN=yes
-DAEMON=/usr/sbin/sslh
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:555 --ssh 127.0.0.1:22 --ssl 127.0.0.1:443 --anyprot 127.0.0.1:4443 --anyprot 127.0.0.1:8388 --pidfile /var/run/sslh/sslh.pid"
-#Puerto 4443 - Proxy Python
-#Puerto 8388 - Shadowsocks
-#
-#Si necesitas Agregar mas puertos agrega --anyprot 127.0.0.1:puerto
-#@PowerMX
