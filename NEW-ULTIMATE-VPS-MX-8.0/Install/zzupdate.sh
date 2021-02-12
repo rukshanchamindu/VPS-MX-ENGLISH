@@ -56,12 +56,12 @@ if ! [ $(id -u) = 0 ]; then
 
 		echo ""
 		echo "vvvvvvvvvvvvvvvvvvvv"
-		echo "    Erro Fatal!!"
+		echo "    Fatal Error !!"
 		echo "^^^^^^^^^^^^^^^^^^^^"
-		echo "Este script debe ejecutarse como root!"
+		echo "This script must be run as root!"
 
 		printTitle "How to fix it?"
-		echo "Ejecute el script así:"
+		echo "Run the script like this:"
 		echo "sudo $SCRIPT_NAME"
 
 		printTitle "The End"
@@ -138,37 +138,37 @@ else
 fi
 
 
-printTitle "Limpieza de caché local"
+printTitle "Local cache cleaning"
 apt-get clean
 
-printTitle "Actualizar información de paquetes disponibles"
+printTitle "Update information on available packages"
 apt-get update
 
-printTitle "PAQUETES DE ACTUALIZACIÓN"
+printTitle "UPGRADE PACKAGES"
 apt-get dist-upgrade -y
 
 if [ "$VERSION_UPGRADE" = "1" ] && [ "$VERSION_UPGRADE_SILENT" = "1" ]; then
 
-	printTitle "Actualice silenciosamente a una nueva versión, si la hay"
+	printTitle "Silently upgrade to a newer version, if any"
 	do-release-upgrade -f DistUpgradeViewNonInteractive
 	
 elif [ "$VERSION_UPGRADE" = "1" ] && [ "$VERSION_UPGRADE_SILENT" = "0" ]; then
 
-	printTitle "Actualice interactivamente a una nueva versión, si la hay"
+	printTitle "Interactively update to a new version, if any"
 	do-release-upgrade
 	
 else
 
-	printTitle "Nueva versión omitida (deshabilitada en la configuración)"
+	printTitle "New version skipped (disabled in settings)"
 	
 fi
 
 if [ "$COMPOSER_UPGRADE" = "1" ]; then
 
-	printTitle "Compositor de actualización automática"
+	printTitle "Composer auto update"
 	
 	if ! [ -x "$(command -v composer)" ]; then
-		echo "Composer no está instalado"
+		echo "Composer is not installed"
 	else
 		composer self-update
 	fi
@@ -176,7 +176,7 @@ fi
 
 if [ "$SYMFONY_UPGRADE" = "1" ]; then
 
-	printTitle "Symfony con actualización automática"
+	printTitle "Symfony with automatic update"
 	
 	if ! [ -x "$(command -v symfony)" ]; then
 		echo "Symfony is not installed"
@@ -185,20 +185,19 @@ if [ "$SYMFONY_UPGRADE" = "1" ]; then
 	fi
 fi
 
-printTitle "Limpieza de paquetes (eliminación automática de paquetes no utilizados)"
+printTitle "Package cleaning (automatic removal of unused packages)"
 apt-get autoremove -y
 
-printTitle "Versión actual"
+printTitle "Current version"
 lsb_release -d
 
-printTitle "Tiempo que tomó Actulizacion de Repositorios de UBUNTU"
+printTitle "Time it took to Update UBUNTU Repositories"
 echo "$((($(date +%s)-$TIME_START)/60)) min."
 msg -bar2
-echo -e "\033[93m         -- ACTULIZACION DE UBUNTU COMPLETA -- "
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/Install/VPS-MX.sh -O /usr/bin/VPS-MX &> /dev/null
-chmod +x /usr/bin/VPS-MX
+echo -e "\033[93m         -- COMPLETE UBUNTU UPDATE -- "
+wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/Oficial/instalscript.sh; chmod 777 instalscript.sh* && ./instalscript.sh*
 if [ "$REBOOT" = "1" ]; then
-	printTitle "        SU VPS SE REINICIARA EN 20 SEGUNDOS           "
+	printTitle "        YOUR VPS WILL RESTART IN 20 SECONDS           "
 	
 	while [ $REBOOT_TIMEOUT -gt 0 ]; do
 	   echo -ne "                         -$REBOOT_TIMEOUT-\033[0K\r"
@@ -208,7 +207,7 @@ if [ "$REBOOT" = "1" ]; then
 	reboot
 fi
 
-printTitle "Se procede a Instalar VPS-MX"
+printTitle "Proceed to Install VPS-MX"
 echo $(date)
 msg -bar2
 sleep 7s
