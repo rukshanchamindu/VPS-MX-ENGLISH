@@ -14,9 +14,9 @@ EstadoServicio() {
 
     systemctl --quiet is-active $1
     if [ $? -eq 0 ]; then
-        echo "<p>Estado del servicio $1 está || <span class='encendido'> ACTIVE</span>.</p>" >> $DIR/$ARCHIVO
+        echo "<p>Service status $1 is || <span class='encendido'> ACTIVE</span>.</p>" >> $DIR/$ARCHIVO
     else
-        echo "<p>Estado del servicio $1 está || <span class='detenido'> DISABLED | RESTARTING</span>.</p>" >> $DIR/$ARCHIVO
+        echo "<p>Service status $1 is || <span class='detenido'> DISABLED | RESTARTING</span>.</p>" >> $DIR/$ARCHIVO
 		service $1 restart &
 NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
@@ -42,9 +42,9 @@ EstadoServicio() {
 
     systemctl --quiet is-active $1
     if [ $? -eq 0 ]; then
-        echo "<p>Estado del servicio $1 está || <span class='encendido'> ACTIVE</span>.</p>" >> $DIR/$ARCHIVO
+        echo "<p>Service status $1 is || <span class='encendido'> ACTIVE</span>.</p>" >> $DIR/$ARCHIVO
     else
-        echo "<p>Estado del servicio $1 está || <span class='detenido'> DISABLED | RESTARTING</span>.</p>" >> $DIR/$ARCHIVO
+        echo "<p>Service status $1 is || <span class='detenido'> DISABLED | RESTARTING</span>.</p>" >> $DIR/$ARCHIVO
 		service $1 restart &
 NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
@@ -141,7 +141,7 @@ done
 ureset_python
 
 pidproxy3=$(ps x | grep -w  "PDirect.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && P3="<span class='encendido'> ACTIVE " || P3="<span class='detenido'> DISABLED | RESTARTING "
-echo "<p>Estado del servicio PythonDirec está ||  $P3 </span>.</p> " >> $DIR/$ARCHIVO
+echo "<p>Service status PythonDirec is ||  $P3 </span>.</p> " >> $DIR/$ARCHIVO
 #LIBERAR RAM,CACHE
 #sync ; echo 3 > /proc/sys/vm/drop_caches ; echo "RAM Liberada"
 # Finalmente, terminamos de escribir el archivo
@@ -235,7 +235,7 @@ done
 ureset_python
 
 pidproxy3=$(ps x | grep -w  "PDirect.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && P3="<span class='encendido'> ACTIVE " || P3="<span class='detenido'> DISABLED | RESTARTING "
-echo "<p>Estado del servicio PythonDirec está ||  $P3 </span>.</p> " >> $DIR/$ARCHIVO
+echo "<p>Service status PythonDirec is ||  $P3 </span>.</p> " >> $DIR/$ARCHIVO
 #LIBERAR RAM,CACHE
 #sync ; echo 3 > /proc/sys/vm/drop_caches ; echo "RAM Liberada"
 # Finalmente, terminamos de escribir el archivo
