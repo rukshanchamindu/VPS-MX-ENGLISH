@@ -121,7 +121,7 @@ echo "${texto[$@]}"
 fi
 }
 atualiza_fun () {
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/instalscript.sh &> /dev/null; chmod 777 instalscript.sh* && ./instalscript.sh*
+wget https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/Oficial/instalscript.sh; chmod 777 instalscript.sh* && ./instalscript.sh*
 msg -bar2
 }
 funcao_idioma () {
@@ -328,7 +328,7 @@ sleep 1s
   rm ${SCPfrm}/lista-arq
   return 1
   fi
-  if [[ $(cat ${SCPfrm}/lista-arq) = "KEY INVALIDA!" ]]; then
+  if [[ $(cat ${SCPfrm}/lista-arq) = "KEY INVALIDA!" ]]; the
   echo -e "\033[1;33m$(fun_trans "KEY INVALIDA")"
   msg -bar2
   rm ${SCPfrm}/lista-arq
