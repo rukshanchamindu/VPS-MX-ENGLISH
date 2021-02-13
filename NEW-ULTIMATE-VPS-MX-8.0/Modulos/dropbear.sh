@@ -4,7 +4,7 @@ declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 mportas () {
-unset portaswget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/Oficial/instalscript.sh; chmod 777 instalscript.sh* && ./instalscript.sh*
+unset portaswget https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/Oficial/instalscript.sh; chmod 777 instalscript.sh* && ./instalscript.sh*
 portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
 while read port; do
 var1=$(echo $port | awk '{print $1}') && var2=$(echo $port | awk '{print $9}' | awk -F ":" '{print $2}')
