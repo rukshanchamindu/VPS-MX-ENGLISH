@@ -107,7 +107,7 @@ SCPidioma="${SCPdir}/idioma"
 local LINGUAGE=$(cat ${SCPidioma})
 [[ -z $LINGUAGE ]] && LINGUAGE=es
 [[ $LINGUAGE = "es" ]] && echo "$@" && return
-[[ ! -e /usr/bin/trans ]] && wget -O /usr/bin/trans https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/trans &> /dev/null
+[[ ! -e /usr/bin/trans ]] && wget -O /usr/bin/trans https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/trans &> /dev/null
 [[ ! -e /etc/texto-adm ]] && touch /etc/texto-adm
 source /etc/texto-adm
 if [[ -z "$(echo ${texto[$@]})" ]]; then
@@ -121,7 +121,7 @@ echo "${texto[$@]}"
 fi
 }
 atualiza_fun () {
-wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/instalscript.sh &> /dev/null; chmod 777 instalscript.sh* && ./instalscript.sh*
+wget https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/instalscript.sh &> /dev/null; chmod 777 instalscript.sh* && ./instalscript.sh*
 msg -bar2
 }
 funcao_idioma () {
