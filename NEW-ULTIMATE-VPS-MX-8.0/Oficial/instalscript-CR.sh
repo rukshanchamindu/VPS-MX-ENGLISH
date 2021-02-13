@@ -1,5 +1,6 @@
 #!/bin/bash
 #SCRIPT INTERNO BY KALIX1
+#CREDITOS TEAM CASITA DEV
 #TESTIANDO SCRIPTS
 msg () {
 BRAN='\033[1;37m' && VERMELHO='\e[31m' && VERDE='\e[32m' && AMARELO='\e[33m'
@@ -26,7 +27,7 @@ system=$(echo $(cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed '
 echo $system|awk '{print $1, $2}'
 }
 update(){
-echo -e "\e[1;37m ACTUALIZANDO SISTEMA...."
+echo -e "\e[1;37m UPDATING SYSTEM ...."
 apt-get update -y &>/dev/null
 apt-get upgrade -y &>/dev/null
 #apt-get install figlet -y &>/dev/null
@@ -37,7 +38,7 @@ kaliofc(){
 fun_ip
 clear
 msg -bar
-msg -verm " ESPERE UN MOMENTO"
+msg -verm " WAIT A MOMENT"
 msg -bar
 dpkg --configure -a &>/dev/null
 apt-get install software-properties-common -y &>/dev/null
@@ -72,37 +73,37 @@ inst_components () {
 funcao_idioma () {
 msg -bar2
 figlet "    -VPS MX-" | lolcat 
-echo -e "     ESTE SCRIPT ESTA OPTIMIZADO A IDIOMA ESPAÑOL"
+echo -e "     THIS SCRIPT IS OPTIMIZED TO ENGLISH LANGUAGE"
 msg -bar2
 pv="$(echo es)"
 [[ ${#id} -gt 2 ]] && id="es" || id="$pv"
 byinst="true"
 }
 install_fim () {
-msg -ama "               Finalizando Instalacion" && msg bar2
-[[ $(find /etc/newadm/ger-user -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/newadm/ger-user/nombre.log https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/nombre.log &>/dev/null
-[[ $(find /etc/newadm/ger-user -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/newadm/ger-user/IDT.log https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/IDT.log &>/dev/null
-[[ $(find /etc/newadm/ger-user -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/newadm/ger-user/tiemlim.log https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/tiemlim.log &>/dev/null
+msg -ama "               Finishing Installation" && msg bar2
+[[ $(find /etc/newadm/ger-user -name nombre.log|grep -w "nombre.log"|head -1) ]] || wget -O /etc/newadm/ger-user/nombre.log https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/nombre.log &>/dev/null
+[[ $(find /etc/newadm/ger-user -name IDT.log|grep -w "IDT.log"|head -1) ]] || wget -O /etc/newadm/ger-user/IDT.log https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/IDT.log &>/dev/null
+[[ $(find /etc/newadm/ger-user -name tiemlim.log|grep -w "tiemlim.log"|head -1) ]] || wget -O /etc/newadm/ger-user/tiemlim.log https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/tiemlim.log &>/dev/null
 msg -bar
-echo -e " CAMBIO DE RESELLER (recomendado)"
+echo -e " CHANGE OF RESELLER (recommended)"
 msg -bar
-read -p " SU NUEVO RESELLER SERÁ? : " mensaje
+read -p " YOUR NEW RESELLER WILL BE? : " mensaje
 echo "$mensaje" > ${SCPdir}/message.txt
 sleep 3.s
-echo -e " MENSAJE CAMBIADO CON ÉXITO"
+echo -e " SUCCESSFULLY CHANGED MESSAGE"
 msg -bar
-echo -e " SU NUEVO RESELLER ES:\e[33m $(cat ${SCPdir}/message.txt)"
+echo -e " YOUR NEW RESELLER IS:\e[33m $(cat ${SCPdir}/message.txt)"
 msg bar
-read -p "enter para finalizar"
+read -p "enter to finish"
 msg -bar
 sleep 4.s
-wget -O /bin/rebootnb https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/rebootnb &> /dev/null
+wget -O /bin/rebootnb https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/rebootnb &> /dev/null
 chmod +x /bin/rebootnb 
-wget -O /bin/resetsshdrop https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/resetsshdrop &> /dev/null
+wget -O /bin/resetsshdrop https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/resetsshdrop &> /dev/null
 chmod +x /bin/resetsshdrop
-wget -O /etc/versin_script_new https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Vercion &>/dev/null
+wget -O /etc/versin_script_new https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/Vercion &>/dev/null
 msg -bar2
-wget -O ${SCPfrm}/ADMbot.sh https://github.com/VPS-MX/VPS-MX-8.0/raw/master/Parches-TEM/ADMbot.sh &>/dev/null
+wget -O ${SCPfrm}/ADMbot.sh https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/Parches-TEM/ADMbot.sh &>/dev/null
 chmod +x ${SCPfrm}/ADMbot.sh
 echo '#!/bin/sh -e' > /etc/rc.local
 sudo chmod +x /etc/rc.local
@@ -123,10 +124,10 @@ echo 'mess1="$(less /etc/newadm/message.txt)" ' >> .bashrc
 echo 'echo "" '>> .bashrc
 echo 'echo -e "\033[92m        RESELLER : $mess1 "'>> .bashrc
 echo 'echo "" '>> .bashrc                                               
-echo 'echo -e "\033[97m   PARA MOSTAR PANEL BASH ESCRIBA:  sudo menu "'>> .bashrc
-#echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/Vercion &>/dev/null'>> .bashrc
+echo 'echo -e "\033[97m   TO SHOW BASH PANEL WRITE:  sudo menu "'>> .bashrc
+#echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/Vercion &>/dev/null'>> .bashrc
 echo 'echo ""'>> .bashrc
-echo -e "         COMANDO PRINCIPAL PARA ENTRAR AL PANEL "
+echo -e "         MAIN COMMAND TO ENTER THE PANEL "
 echo -e "\033[1;41m                     sudo menu                        \033[0;37m" && msg -bar2
 sleep 5
 }
@@ -156,7 +157,7 @@ mv -f ${SCPinstal}/$1 ${ARQ}/$1
 chmod +x ${ARQ}/$1
 }
 
-echo -e "        INSTALANDO PAQUETES........"
+echo -e "        INSTALLING PACKAGES........"
 apt-get install lsof >/dev/null 2>&1
 apt-get install sudo >/dev/null 2>&1
 apt-get install cowsay -y >/dev/null 2>&1
@@ -164,36 +165,36 @@ apt-get install lolcat -y >/dev/null 2>&1
 apt-get install figlet -y >/dev/null 2>&1
 apt install python python3 python-pip python3-pip -y >/dev/null 2>&1
 inst_components
-link=https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/SCRIPT
-wget -O /usr/bin/trans https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/trans &> /dev/null
-wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/Desbloqueo.sh &> /dev/null
+link=https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/Modulos
+wget -O /usr/bin/trans https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/trans &> /dev/null
+wget -O /bin/Desbloqueo.sh https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/Desbloqueo.sh &> /dev/null
 chmod +x /bin/Desbloqueo.sh
-wget -O /bin/monitor.sh https://raw.githubusercontent.com/casitadelterror/rex/master/moni/monitor.sh &> /dev/null
+wget -O /bin/monitor.sh https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/Monitor-Service/monitor.sh &> /dev/null
 chmod +x /bin/monitor.sh
-wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
+wget -O /var/www/html/estilos.css https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/Monitor-Service/estilos.css &> /dev/null
 msg -bar2
 msg -bar2
-msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @? ❌\033[1;33m ]"
-msg -ama "  \033[1;96m      🔰Usar Ubuntu 18 a 64 De Preferencia🔰 "
+msg -ama "     [ VPS - MX - SCRIPT \033[1;97m ❌ MOD By @Kalix1 ❌\033[1;33m ]"
+msg -ama "  \033[1;96m      🔰 Ubuntu 18 🔰 "
 msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
 [[ ${#1} -gt 2 ]] && funcao_idioma || id="$1"
  }
 NOTIFY () {
 msg -bar
-msg -ama " Notify-BOT (Notificasion Remota)| VPS-MX  "
+msg -ama " Notify-BOT (Remote Notification)| VPS-MX  "
 msg -bar
-echo -e "\033[1;94m Es una opcion para notificar cuando\n un usuario sea bloquedo o este expirado, e info de VPS."
-echo -e "\033[1;97m Deve usar el BOT de Telegram @Noti_VPSMX_Bot"
-echo -e "\033[1;92m Para sacar su ID solo Meta el comando /MENU en el BOT @USA1_BOT"
-echo -e "\033[1;92m Aparesera un pequeño menu donde aparesera su  👤 ID"
+echo -e "\033[1;94m It is an option to notify when \ n a user is blocked or is expired, and VPS info."
+echo -e "\033[1;97m Must use the Telegram BOT @Noti_VPSMX_Bot"
+echo -e "\033[1;92m To get your ID just put the command / START in the BOT @ userinfobot"
+echo -e "\033[1;92m A small menu will appear where your 👤 ID will appear"
 msg -bar
-echo -e "\033[1;97mIgrese un nombre para el VPS:\033[0;37m"; read -p " " nombr
+echo -e "\033[1;97mIgrese a name for the VPS:\033[0;37m"; read -p " " nombr
 echo "${nombr}" > /etc/newadm/ger-user/nombre.log
-echo -e "\033[1;97mIgrese su ID 👤:\033[0;37m"; read -p " " idbot
+echo -e "\033[1;97mIgrese Telegram ID 👤:\033[0;37m"; read -p " " idbot
 echo "${idbot}" > /etc/newadm/ger-user/IDT.log 
 msg -bar
-echo -e "\033[1;32m         ID AGREGADO CON EXITO"
+echo -e "\033[1;32m         ID ADDED SUCCESSFULLY"
 msg -bar
 NOM="$(less /etc/newadm/ger-user/nombre.log)"
 NOM1="$(echo $NOM)"
@@ -202,12 +203,12 @@ IDB2=`echo $IDB1` > /dev/null 2>&1
 
 KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
-👉 MENSAJE DE PRUEBA
-🔰 EXITOSO... SALUDOS"
+MSG="⚠️ VPS NOTICE: $NOM1 ⚠️
+👉 TEST MESSAGE
+🔰 SUCCESSFUL ... GREETINGS "
 curl -s --max-time 10 -d "chat_id=$IDB2&disable_web_page_preview=1&text=$MSG" $URL &>/dev/null
 
-echo -e "\033[1;34mSE ENVIO MENSAJE DE PRUEBA SI NO LLEGA CONTACTE A @? "
+echo -e "\033[1;34mSE I SEND A TEST MESSAGE IF IT DOES NOT ARRIVE, CONTACT @? "
 }
 pontos="*"
 _repomx=("ADMbot.sh" "C-SSR.sh" "Crear-Demo.sh" "PDirect.py" "PGet.py" "POpen.py" "PPriv.py" "PPub.py" "Shadowsocks-R.sh" "Shadowsocks-libev.sh" "Unlock-Pass-VULTR.sh" "apacheon.sh" "blockBT.sh" "budp.sh" "dns-netflix.sh" "dropbear.sh" "fai2ban.sh" "gestor.sh" "menu" "message.txt" "openvpn.sh" "paysnd.sh" "ports.sh" "shadowsocks.sh" "sockspy.sh" "speed.sh" "speedtest.py" "squid.sh" "squidpass.sh" "ssl.sh" "tcp.sh" "ultrahost" "usercodes" "utils.sh" "v2ray.sh")
@@ -221,7 +222,7 @@ for _archi in ${_repomx[@]}; do
 done
 sleep 1s
 msg -bar
-Key="ScriptFree-Casita-Kalix1-Oficial/12345*456*"
+Key="qraKatsil/33?030ce55?7dff/8888:05+@%?+08?+91%@"
    cat /etc/bash.bashrc|grep -v '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' > /etc/bash.bashrc.2
    echo -e '[[ $UID != 0 ]] && TMOUT=15 && export TMOUT' >> /etc/bash.bashrc.2
    mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
@@ -230,8 +231,8 @@ Key="ScriptFree-Casita-Kalix1-Oficial/12345*456*"
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
-   echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
-   echo -e "\033[1;34m  (Deves tener Telegram y el BOT: @Noti_VPSMX_Bot)"
+   echo -e "${cor[2]}         DO YOU WANT TO INSTALL NOTI-BOT? (Default n)"
+   echo -e "\033[1;34m  (You must have Telegram and the BOT: @Noti_VPSMX_Bot)"
    msg -bar2
    read -p " [ s | n ]: " NOTIFY   
    [[ "$NOTIFY" = "s" || "$NOTIFY" = "S" ]] && NOTIFY
