@@ -47,4 +47,4 @@ rm -rf VPS-MX-ENGLISH.sh; apt update; apt upgrade -y; wget https://raw.githubuse
 1. [@Kalix1 - Developer of VPS-MX](https://github.com/VPS-MX)
 2. [@Rufu99 - Contributor](https://github.com/rudi9999)
 3. [Casita Dev Team - Contributor](https://github.com/lacasitamx)
-4. [illuminati Dev Team - Contributor](https://github.com//AAAAAEXQOSyIpN2JZ0ehUQ)) 
+4. [illuminati Dev Team - Contributor](https://github.com//AAAAAEXQOSyIpN2JZ0ehUQ)
