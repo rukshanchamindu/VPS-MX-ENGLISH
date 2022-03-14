@@ -39,7 +39,7 @@ rm -rf VPS-MX-ENGLISH.sh; apt update; apt upgrade -y; wget https://raw.githubuse
 **VPS-MX English Installed**
 
 
-## VERSION: 8.4e
+## VERSION: 8.4g
 
 
 ## :octocat: Credits
