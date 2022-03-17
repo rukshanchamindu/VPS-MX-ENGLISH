@@ -1,7 +1,6 @@
 # VPS-MX-ENGLISH
+Vps manager Script English Version
 
-
- Vps manager Script English Version
 
 ![logo](https://raw.githubusercontent.com/rukshanchamindu/VPS-MX-ENGLISH/main/Files/VPS-MX-ENGLISH.gif)
 
